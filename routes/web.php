@@ -40,3 +40,7 @@ Route::get('email/resend', 'Auth\VerificationController@resend')->name('verifica
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
+// 用户
+Route::resource('users', 'UsersController', ['only' => [
+    'show', 'update', 'edit'
+]]);
