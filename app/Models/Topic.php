@@ -10,7 +10,7 @@ class Topic extends Model
     ];
 
     public function category(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function user(){
