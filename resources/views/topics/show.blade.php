@@ -12,9 +12,7 @@
           <div class="text-center">
             作者：{{ $topic->user->name }}
           </div>
-
           <hr>
-
           <div class="media">
             <div align="center">
               <a href="{{ route('users.show', $topic->user->id) }}">
@@ -27,6 +25,8 @@
     </div>
 
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 topic-content">
+
+      {{-- 话题详情 --}}
       <div class="card ">
         <div class="card-body">
           <h1 class="text-center mt-3 mb-3">
@@ -61,6 +61,15 @@
           @endcan
         </div>
       </div>
+
+      {{-- 话题回复列表 --}}
+      <div class="card topic-reply mt-4">
+        <div class="card-body">
+          @include('topics._reply_box', ['topic' => $topic])
+          @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
+        </div>
+      </div>
+
     </div>
   </div>
 @endsection
