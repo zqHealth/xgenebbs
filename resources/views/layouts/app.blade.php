@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'xgenebbs') - X-Gene BBS</title>
+    <meta name="description" content="@yield('description', 'xgeneBBS')">
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
